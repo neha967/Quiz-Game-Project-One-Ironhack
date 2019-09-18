@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="stylesheets/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Saira+Extra+Condensed&display=swap" rel="stylesheet">
+    <title>Quiz Game</title>
+</head>
+<body>
+    <div id="main">
+        <h1 class="display-4 lead">Test Your Knowledge</h1>
+        <div>
+        <p class="score-box">
+            <span class="text-danger border border-top-0 border-right-0 border-left-0">Score</span>
+            <span>3 for Easy</span> 
+            <span>5 for Medium</span> 
+            <span>10 for Difficult</span>
+        </p>
+        </div>
+        <div class="levels">
+            <span>Choose Difficulty Level</span>
+            <span class="level text-secondary">EASY</span>
+            <span class="level text-secondary">MEDIUM</span>
+            <span class="level text-secondary">DIFFICULT</span>
+        </div>
+        <div class="categories">
+            <span>Choose Category</span>
+            <select id="category">
+                <option class="test" value="GK">General Knowledge</option>
+                <option class="test" value="Sports">Sports</option>
+                <option class="test" value="Inventions">Inventions & Discoveries</option>
+                <option class="test" value="Science">Science & Technology</option>
+                <option class="test" value="History">World History</option>
+            </select>
+        </div>
+        <div>
+        <button type="button" id="play-btn">PLAY</button>
+        </div>
+    </div>
+    <div><button id="update-score">Score: <span id="score">0</span></button></div>
+    
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script src="scripts/data.js"></script> 
+    <script src="scripts/main.js"></script> 
+    
+</body>
+</html>
