@@ -51,7 +51,8 @@ body{
     border: 1px solid white;
     width: 15%;
     border-radius: 5px;
-    background: white
+    background: white;
+    color: black;
 }
 
 .categories {
@@ -77,6 +78,10 @@ body{
     color: white;
 }
 
+#play-btn:hover {
+    cursor: pointer;
+}
+
 ul {
     list-style-type: none;
     padding: 0;
@@ -86,7 +91,6 @@ ul {
 li {
     border: 1px solid white;
     border-radius: 10px;
-    /* background: #ffffff; */
     padding: 5px;
     margin-bottom: 5px;
 }

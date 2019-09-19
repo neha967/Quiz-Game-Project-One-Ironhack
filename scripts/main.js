@@ -7,31 +7,27 @@ class Game{
     }
 
     levels(){
-        let fixThis = this
         $(".level").click(function(){
-            $(this).removeClass("text-secondary")
-            $(this).addClass("selected")        
-                  
-            if($(this).text() === "EASY"){ 
-                fixThis.easy();
-            } else if($(this).text() === "MEDIUM"){
-                fixThis.medium();
-            } else if($(this).text() === "DIFFICULT"){
-                fixThis.difficult();
-            }
+            if($(this).hasClass("selected")) {
+                $(this).removeClass("selected")        
+            } else {
+                $(".level").removeClass("selected") 
+                $(this).addClass("selected") 
+            }  
         })
     }
 
     categories(){
         let fixThis = this
         $("#category").change(function(e){
+            
             if($(".selected")){
-                var level = $(".selected").text()
-                if(level === "EASY"){
+                fixThis.level = $(".selected").text()
+                if(fixThis.level === "EASY"){
                     fixThis.easy();
-                } else if(level === "MEDIUM"){
+                } else if(fixThis.level === "MEDIUM"){
                     fixThis.medium();
-                } else if(level === "DIFFICULT"){
+                } else if(fixThis.level === "DIFFICULT"){
                     fixThis.difficult();
                 }
             }
@@ -40,21 +36,22 @@ class Game{
 
     easy(){
         var selectedCategory = $("#category :selected").val();      
-        var questions = easyQuestions[selectedCategory]  //array of questions with objects for easy level with the selected category
+        var questions = easyQuestions[selectedCategory]
+        debugger
         let fixThis = this;    
-        $("#play-btn").click( ()=> fixThis.genQues(questions))
+        $("#play-btn").click( ()=> {debugger; fixThis.genQues(questions)})
     }
 
     medium(){
         var selectedCategory = $("#category :selected").val();                   
-        var questions = mediumQuestions[selectedCategory] //array of questions with objects for medium level with the selected category
+        var questions = mediumQuestions[selectedCategory]
         let fixThis = this;
         $("#play-btn").click( ()=> fixThis.genQues(questions))
     }
 
     difficult(){
         var selectedCategory = $("#category :selected").val();                   
-        var questions = difficultQuestions[selectedCategory] //array of questions with objects for difficult level with the selected category
+        var questions = difficultQuestions[selectedCategory]
         let fixThis = this;
         $("#play-btn").click( ()=> fixThis.genQues(questions))
     }
@@ -62,7 +59,7 @@ class Game{
     genQues(questions){
         var generateRandomQuestionIndex = Math.floor(Math.random() * questions.length)
         var getARamdomQuestion = questions[generateRandomQuestionIndex];
- 
+
         var div = document.createElement("div")
         div.classList.add("new-div")
 
@@ -77,41 +74,58 @@ class Game{
 
         $("#main").html(div);   
         $("#update-score").css("display", "block");
-        
+        this.compareAnswer(questions, getARamdomQuestion);
+    }
+
+    compareAnswer(questions, getARamdomQuestion){
+
+        let fixThis = this;
+        $("li").click(function(e){
+            var userAnswer = e.target;
+            $(userAnswer).removeClass("text-secondary")
+            
+            var rightAnswer = getARamdomQuestion.rightAns;
+                                  
+            if(userAnswer.innerHTML === rightAnswer){
+                fixThis.correctAns(userAnswer, questions);                
+             } else { 
+                fixThis.incorrectAns(userAnswer, questions, rightAnswer);
+            }
+        })    
+    }
+
+    correctAns(userAnswer, questions){
         let fixThis = this;
 
-            $("li").click(function(e){                
-                var userAnswer = e.target;
-                $(userAnswer).removeClass("text-secondary");
-                $(userAnswer).css("color", "black");
-               
-                console.log(userAnswer.innerHTML);
+        if(fixThis.level === "EASY"){
+            fixThis.score += 3;
+        } else if (fixThis.level === "MEDIUM") {
+            fixThis.score += 5;
+        } else if (fixThis.level === "DIFFICULT"){
+            fixThis.score += 10;
+        }
 
-                var rightAnswer = getARamdomQuestion.rightAns;
-                console.log(rightAnswer);
+        $("#score").html(Number(fixThis.score))                                
+        $(userAnswer).css({backgroundColor: "green", color: "black"})                
+        fixThis.nextquest(questions)
+        $("li").off("click")
+    }
 
-                var level = $(".selected").text()
-               
-                if(userAnswer.innerHTML === rightAnswer){
+    incorrectAns(userAnswer, questions, rightAnswer){
+        let fixThis = this;
 
-                    if(level === "EASY"){
-                        score += 3;
-                    } else if (level === "MEDIUM") {
-                        score += 5;
-                    } else if (level === "DIFFICULT"){
-                        score += 10;
-                    }
+        $(userAnswer).css({backgroundColor: "red", color: "black"})              
+        $("li").off("click")
+        fixThis.nextquest(questions)
 
-                    $("#score").html(Number(score))
-                    userAnswer.style.backgroundColor = "green"
-                    fixThis.nextquest(questions)
-                    $("li").off("click")
-                 } else {
-                    userAnswer.style.backgroundColor = "red"
-                    $("li").off("click")
-                    fixThis.nextquest(questions)
-                }
-            })    
+        var filteredArray = $(".text-secondary").filter(function(){
+            return $(this).text() === rightAnswer
+        })
+
+        setTimeout(function(){
+            filteredArray.css({backgroundColor: "green", color: "black"})
+            filteredArray.removeClass("text-secondary")
+        }, 300)
     }
 
     nextquest(questions){
@@ -127,9 +141,5 @@ class Game{
         })
     }
 }
-
-
-//fix score after refactor
-
 
 let game = new Game()

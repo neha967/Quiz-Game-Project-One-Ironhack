@@ -180,6 +180,31 @@ var easyQuestions = {
             question: "The Industrial Revolution began in",
             options: ["Great Britain", "France", "Spain", "Germany"],
             rightAns: "Great Britain"  
+        },
+        {
+            question: "During World War I, which country signed the Peace Treaty (1917) with Germany?",
+            options: ["England", "USA", "Russia", "Austria"],
+            rightAns: "Russia"  
+        },
+        {
+            question: "In which year, America joined World War II",
+            options: ["1939", "1940", "1941", "1942"],
+            rightAns: "1941"  
+        },
+        {
+            question: "The war criminals of the World War II were put to trial in",
+            options: ["Nuremburg", "Peitersburg", "Gettysburg", "Peitsburg"],
+            rightAns: "Nuremburg"  
+        },
+        {
+            question: "Who was the king of Britain during World War I?",
+            options: ["Philip I", "Anarew VIII", "George V", "Jonn VII"],
+            rightAns: "George V"  
+        },
+        {
+            question: "Napoleon was exiled to the Saint Helena after the defeat in the war of",
+            options: ["Russia", "Waterloo", "Peninsular", "Rivoli"],
+            rightAns: "Waterloo"  
         }
     ],
     Science: [
@@ -207,6 +232,31 @@ var easyQuestions = {
             question: "Which is the smallest planet on our solar system?",
             options: ["Mercury", "Mars", "Jupiter", "Pluto"],
             rightAns: "Mercury"  
+        },
+        {
+            question: "‘OS’ computer abbreviation usually means?",
+            options: ["Order of Significance", "Open Software", "Operating System", "Optical Sensor"],
+            rightAns: "Operating System"  
+        },
+        {
+            question: "Who developed Yahoo?",
+            options: ["Dennis Ritchie & Ken Thompson", "David Filo & Jerry Yang", "Vint Cerf & Robert Kahn", "Steve Case & Jeff Bezos"],
+            rightAns: "David Filo & Jerry Yang"  
+        },
+        {
+            question: "‘DB’ computer abbreviation usually means?",
+            options: ["Database", "Double Byte", "Data Block", "Driver Boot"],
+            rightAns: "Database"  
+        },
+        {
+            question: "Who co-founded Hotmail in 1996 and then sold the company to Microsoft?",
+            options: ["Shawn Fanning", "Ada Byron Lovelace", "Sabeer Bhatia", "Ray Tomlinson"],
+            rightAns: "Sabeer Bhatia"  
+        },
+        {
+            question: "In the US, the television broadcast standard is?",
+            options: ["PAL", "NTSC", "SECAM", "RGB"],
+            rightAns: "SECAM"  
         }
     ]
 }
@@ -393,6 +443,31 @@ var mediumQuestions = {
             question: "At the end of World War II, East Germany was occupied by the forces of",
             options: ["USA", "USSR", "Spain", "Britain"],
             rightAns: "USSR"  
+        },
+        {
+            question: "Crimean war was started in the year",
+            options: ["1862", "1857", "1853", "1870"],
+            rightAns: "1853"  
+        },
+        {
+            question: "The First Opium War was fought between British and ______",
+            options: ["Chinese", "Indian", "Japanese", "Thai"],
+            rightAns: "Chinese"  
+        },
+        {
+            question: "First war of Crusade was ended in the year ______",
+            options: ["1099", "1095", "1123", "1323"],
+            rightAns: "1099"  
+        },
+        {
+            question: "When did Chinese Civil War begin?",
+            options: ["1937", "1948", "1950", "1927"],
+            rightAns: "1927"  
+        },
+        {
+            question: "Till when did the Hundred Years’ War last?",
+            options: ["1327", "1377", "1453", "1376"],
+            rightAns: "1453"  
         }
     ],
     Science: [
@@ -420,6 +495,31 @@ var mediumQuestions = {
             question: "National amblem of which of these countries shows a lion and a sword",
             options: ["India", "South Africa", "Nepal", "Sri Lanka"],
             rightAns: "Sri Lanka"  
+        },
+        {
+            question: "What consists of two plates separated by a dielectric and can store a charge?",
+            options: ["Inductor", "Capacitor", "Transistor", "Relay"],
+            rightAns: "Capacitor"  
+        },
+        {
+            question: "What does AM mean?",
+            options: ["Angelo Marconi", "Anno Median", "Amplitude Modulation", "Amperes"],
+            rightAns: "Amplitude Modulation"  
+        },
+        {
+            question: "In what year was the ‘@’ chosen for its use in e-mail addresses?",
+            options: ["1976", "1972", "1980", "1984"],
+            rightAns: "1972"  
+        },
+        {
+            question: "'CD' computer abbreviation usually means?",
+            options: ["Command Description", "Change Data", "Copy Density", "Compact Disc"],
+            rightAns: "Compact Disc"  
+        },
+        {
+            question: "What term is used for commanding the computer to arrange information numerically or alphabetically?",
+            options: ["Crop", "Report", "Record", "Sort"],
+            rightAns: "Sort"  
         }
     ]    
 }
@@ -606,6 +706,31 @@ var difficultQuestions = {
             question: "The last of the Axis powers to surrender in the World War II was",
             options: ["Germany", "Italy", "Japan", "Hungary"],
             rightAns: "Japan"  
+        },
+        {
+            question: "Till when did the Wars of the Roses last?",
+            options: ["1420", "1487", "1431", "1453"],
+            rightAns: "1487"  
+        },
+        {
+            question: "When did Greco-Persian Wars end?",
+            options: ["460BC", "449BC", "447BC", "424BC"],
+            rightAns: "449BC"  
+        },
+        {
+            question: "Which city was recaptured at the end of the first war of Crusade?",
+            options: ["Jerusalem", "Rome", "Venice", "Vienna"],
+            rightAns: "Jerusalem"  
+        },
+        {
+            question: "Punic Wars were fought between",
+            options: ["Greece and Gaul", "Greece and Rome", "Rome and Gaul", "Rome and Carthage"],
+            rightAns: "Rome and Carthage"  
+        },
+        {
+            question: "The American Civil War saw the end of",
+            options: ["Slavery", "Landlordism", "Monarchy", "Apartheid"],
+            rightAns: "Slavery"  
         }
     ],
     Science: [
@@ -633,6 +758,31 @@ var difficultQuestions = {
             question: "The first high level programming was",
             options: ["COBOL", "FORTRAN", "LISP", "Pascal"],
             rightAns: "FORTRAN"  
+        },
+        {
+            question: "Electric bulb filament is made of ",
+            options: ["Copper", "Aluminium", "Lead", "Tungsten"],
+            rightAns: "Tungsten"  
+        },
+        {
+            question: "Which of the following is a non-metal that remains liquid at room temperature?",
+            options: ["Phosphorous", "Bromine", "Chlorine", "Helium"],
+            rightAns: "Bromine"  
+        },
+        {
+            question: "Which of the following is used in pencils?",
+            options: ["Graphite", "Silicon", "Charcoal", "Phosphorous"],
+            rightAns: "Graphite"  
+        },
+        {
+            question: "Which of the following metals forms an amalgam with other metals?",
+            options: ["Tin", "Mercury", "Lead", "Zinc"],
+            rightAns: "Mercury"  
+        },
+        {
+            question: "The gas usually filled in the electric bulb is",
+            options: ["Nitrogen", "Hydrogen", "Carbon dioxide", "Oxygen"],
+            rightAns: "Nitrogen"  
         }
     ]
 }
