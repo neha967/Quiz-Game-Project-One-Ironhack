@@ -1,9 +1,22 @@
 class Game{
     constructor() {
         this.score = 0;
-        this.level 
+        this.level;
+        this.easyTotal = 30;
+        this.mediumTotal = 50;
+        this.difficultTotal = 100;
+        this.trackQuestionsDisplayed = []; 
         this.levels();
         this.categories();
+        this.backgroundMusic();
+    }
+
+    backgroundMusic(){
+        $(window).click(function(){
+            let themeSong = $("#myAudio")[0];
+            themeSong.play();
+            $(window).off("click")
+        })
     }
 
     levels(){
@@ -55,7 +68,7 @@ class Game{
         $("#play-btn").click( ()=> fixThis.genQues(questions))
     }
 
-    genQues(questions){
+    genQues(questions){       
         var generateRandomQuestionIndex = Math.floor(Math.random() * questions.length)
         var getARamdomQuestion = questions[generateRandomQuestionIndex];
 
@@ -71,9 +84,65 @@ class Game{
             <li class="text-secondary">${getARamdomQuestion.options[3]}</li>
         </ul>`
 
+        if(this.trackQuestionsDisplayed.includes(getARamdomQuestion.id) && this.trackQuestionsDisplayed.length < 10){
+            this.genQues(questions)
+            return this.trackQuestionsDisplayed            
+        }       
+
         $("#main").html(div);   
-        $("#update-score").css("display", "block");
+        $("#update-score").css("visibility", "visible");
         this.compareAnswer(questions, getARamdomQuestion);
+    }
+
+    gameFinished(){
+        if(this.trackQuestionsDisplayed.length === 10){
+
+            $("#update-score").hide();
+
+                var div = document.createElement("div")
+                div.classList.add("game-over")
+
+                div.innerHTML = `
+                    <h1>GAME FINISHED!!!</h1>
+                    <h3>You attempted all 10 questions</h3>
+                    <p>You scored ${this.score}</p>
+                    <p id="message">Congratulations!!!</p>
+                    <img src="happy.gif" alt="happy" style="display:none;width:100px;height:100px" id="happy">
+                    <img src="sad.gif" alt="sad" style="display:none;width:100px;height:100px" id="sad">
+                `
+                $("#main").html(div);  
+                
+                this.displayGif();
+          }
+    }
+
+    displayGif(){
+        if(this.level === "EASY"){
+            if(this.score > 0.8 * this.easyTotal) {
+                $("#happy").css({display: "block", margin: "0 auto"})
+            } else {
+                $("#sad").css({display: "block", margin: "0 auto"})
+                $("#message").text("Try better next time!!")
+            }
+        }   
+
+        if(this.level === "MEDIUM"){
+            if(this.score > 0.7 * this.mediumTotal){
+                $("#happy").css({display: "block", margin: "0 auto"})
+            } else {
+                $("#sad").css({display: "block", margin: "0 auto"})
+                $("#message").text("Try better next time!!")
+            }
+        }
+
+        if(this.level === "DIFFICULT"){
+            if(this.score > 0.6 * this.difficultTotal) {
+                $("#happy").css({display: "block", margin: "0 auto"})                
+            } else {
+                $("#sad").css({display: "block", margin: "0 auto"})
+                $("#message").text("Try better next time!!")            
+            }
+        }
     }
 
     compareAnswer(questions, getARamdomQuestion){
@@ -82,6 +151,7 @@ class Game{
         $("li").click(function(e){
             var userAnswer = e.target;
             $(userAnswer).removeClass("text-secondary")
+            fixThis.trackQuestionsDisplayed.push(getARamdomQuestion.id);
             
             var rightAnswer = getARamdomQuestion.rightAns;
                                   
@@ -139,6 +209,7 @@ class Game{
 
         $(".next").click(function(){
             fixThis.genQues(questions);
+            fixThis.gameFinished();
         })
     }
 }
