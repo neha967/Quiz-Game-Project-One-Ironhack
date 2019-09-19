@@ -53,6 +53,7 @@ body{
     border-radius: 5px;
     background: white;
     color: black;
+    cursor: pointer;
 }
 
 .categories {
@@ -115,4 +116,5 @@ li {
     background: blue;
     width: 300px;
     margin-bottom: 10px;
+    cursor: pointer;
 }

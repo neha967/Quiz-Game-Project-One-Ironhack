@@ -19,8 +19,8 @@ class Game{
 
     categories(){
         let fixThis = this
-
-        $("#category").change(function(e){            
+        $("#category").change(function(e){
+            
             if($(".selected")){
                 fixThis.level = $(".selected").text()
                 if(fixThis.level === "EASY"){
@@ -37,8 +37,9 @@ class Game{
     easy(){
         var selectedCategory = $("#category :selected").val();      
         var questions = easyQuestions[selectedCategory]
+        debugger
         let fixThis = this;    
-        $("#play-btn").click( ()=> {fixThis.genQues(questions)})
+        $("#play-btn").click( ()=> {debugger; fixThis.genQues(questions)})
     }
 
     medium(){
@@ -105,8 +106,7 @@ class Game{
         }
 
         $("#score").html(Number(fixThis.score))                                
-        $(userAnswer).css({backgroundColor: "green", color: "black"}) 
-        $("#correct").trigger("play");       
+        $(userAnswer).css({backgroundColor: "green", color: "black"})                
         fixThis.nextquest(questions)
         $("li").off("click")
     }
@@ -114,8 +114,7 @@ class Game{
     incorrectAns(userAnswer, questions, rightAnswer){
         let fixThis = this;
 
-        $(userAnswer).css({backgroundColor: "red", color: "black"})  
-        $("#incorrect").trigger("play");            
+        $(userAnswer).css({backgroundColor: "red", color: "black"})              
         $("li").off("click")
         fixThis.nextquest(questions)
 
@@ -126,7 +125,7 @@ class Game{
         setTimeout(function(){
             filteredArray.css({backgroundColor: "green", color: "black"})
             filteredArray.removeClass("text-secondary")
-        }, 1000)
+        }, 300)
     }
 
     nextquest(questions){

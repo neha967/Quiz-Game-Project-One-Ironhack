@@ -9,6 +9,10 @@
     <title>Quiz Game</title>
 </head>
 <body>
+    <iframe src="./silence.mp3" allow="autoplay" id="audio" style="display:none"></iframe>
+    <audio id="myAudio" autoplay loop>
+        <source src="./crystal.mp3" type="audio/mpeg">
+    </audio>
     <div id="main">
         <h1 class="display-4 lead">Test Your Knowledge</h1>
         <div>
@@ -41,7 +45,12 @@
         </div>
     </div>
     <div><button id="update-score">Score: <span id="score">0</span></button></div>
-    
+    <audio id="correct">
+        <source src="correct.mp3" type="audio/mpeg">
+    </audio>
+    <audio id="incorrect">
+        <source src="incorrect.mp3" type="audio/mpeg">
+    </audio>    
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
