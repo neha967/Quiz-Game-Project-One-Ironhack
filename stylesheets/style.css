@@ -119,6 +119,9 @@ li {
     background: blue;
     width: 300px;
     margin-bottom: 10px;
+}
+
+.next:hover {
     cursor: pointer;
 }
 
@@ -127,4 +130,17 @@ li {
     margin: 70px auto;
     color: yellow;
     text-align: center;
+}
+
+#reset{
+    background: red;
+    visibility: hidden;
+    width: 150px;
+    display: block;
+    margin: 30px auto;
+    color: white;
+}
+
+#reset:hover{
+    cursor: pointer;
 }

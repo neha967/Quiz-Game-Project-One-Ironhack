@@ -508,7 +508,7 @@ var mediumQuestions = {
         {
             question: "Who said this famous quote 'government of the people, by the people, for the people, shall not perish from the earth'",
             options: ["Vladimir Lenin", "Mahatma Gandhi", "Abraham Lincoln", "Nelson Mandela"],
-            rightAns: "1914",
+            rightAns: "Abraham Lincoln",
             id: 2
         },
         {
